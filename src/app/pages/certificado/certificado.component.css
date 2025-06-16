@@ -21,6 +21,7 @@
 .btn-voltar i {
   font-size: 20px;
   color: #64748b;
+  cursor: pointer;
 }
 
 .certificado {
