@@ -7,9 +7,13 @@
       <p class="m-0">Voltar</p>
     </div>
 
-    <app-secondary-button></app-secondary-button>
+    <app-secondary-button
+      phClass="ph ph-download-simple"
+      textoBotao="Download"
+    ></app-secondary-button>
   </div>
 
+  @if (certificado) {
   <div class="certificado d-flex justify-content-center align-items-center">
     <img
       src="certificate/certificate_ribbon.png"
@@ -28,22 +32,20 @@
           <p>Este certificado comprova que</p>
         </div>
 
-        <p class="nome-aluno">Ana Silva Lopes</p>
+        <p class="nome-aluno">{{ certificado.nome }}</p>
 
         <div>
           <p class="lista-atividade-titulo">
             Concluiu com sucesso as sequintes atividade:
           </p>
           <p class="lista-atividade">
-            Introdução ao Angular, Configuração com Angular CLI, Criação de
-            componentes reutilizáveis, Manipulação de dados, Implementação de
-            data binding, Criação de rotas com Angular Router, Consumo de APIs
-            REST
+            {{ certificado.atividades.join(", ") }}
           </p>
         </div>
       </div>
 
-      <p class="data-emissao">Emitido em 25/04/2025</p>
+      <p class="data-emissao">Emitido em {{ certificado.dataEmissao }}</p>
     </div>
   </div>
+  }
 </div>
